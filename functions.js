@@ -1,17 +1,17 @@
-var data = require("./data/books.json");
+var data = require("./data/category.json");
 
 module.exports = {
-    getAllBooks:()=>{
+    getAll:()=>{
         return data;
     },
     
-    getBookbyId:(id)=>{
+    getbyID:(id)=>{
         let result = false;
-        for(let i in data.Books){
-            var book = data.Books[i];
-        if(book.id==id){
+        for(let i in data.Categories){
+            var cat = data.Categories[i];
+        if(cat.id==id){
             result = true;
-            return({"Title": book.title});
+            return({"Title": cat.title});
         }
     }
     if(!result)
@@ -19,11 +19,14 @@ module.exports = {
     },
     search:(id,title)=>{
         let result = false;
-        for(let i in data.Books){
-            var book = data.Books[i];
-        if(book.id==id && book.title==title){
+        for(let i in data.Categories){
+            var cat = data.Categories[i];
+        if(cat.id==id && cat.title==title){
             result = true;
-            return({"Title": book.title,"Description":book.description})
+            return({"Title": cat.title,
+            "Visitors":cat.visitors,
+            "Expectancy":cat.expectancy,
+            "Revenue":cat.revenue});
             }
     }
     if(!result)

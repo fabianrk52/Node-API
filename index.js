@@ -1,7 +1,6 @@
 var     express = require ('express'),
         app = express(),
         port = process.env.PORT || 3000,
-        data = require("./data/books.json"),
         func = require("./functions");
 
 app.all('*',
@@ -11,15 +10,15 @@ app.all('*',
     });
 
 
-    app.get('/getAllBooks',
+    app.get('/getAll/',
     (req,res)=>{
-        res.status(200).json(func.getAllBooks());
+        res.status(200).json(func.getAll());
     });
     
     
-    app.post('/getBookbyId/:id/',
+    app.post('/getCatbyID/:id/',
     (req,res)=>{
-        res.status(200).json(func.getBookbyId(req.params.id));
+        res.status(200).json(func.getbyID(req.params.id));
     });
     
     app.get('/search/:id/:title',
