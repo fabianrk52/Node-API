@@ -28,6 +28,15 @@ app.all('*',
         res.status(200).json(func.search(req.params.id,req.params.title));
     });  
 
+    app.get('/' ,
+    (req,res) =>{
+    res.sendFile(`${__dirname}/index.html`);
+    });
+
+    app.get('/includes/style.css',
+    (req,res) =>{
+    res.sendFile(`${__dirname}/includes/style.css`);
+    });
 
 app.listen(3000,()=>{
     console.log(`listening port : ${port}`);
