@@ -8,17 +8,28 @@
     <title>API</title>
 </head>
 <body>
-    <h1>API</h1>
-    
-    <div>
-    
-        <img src="./images/Screen Shot 2018-05-16 at 14.40.58.png" height="150px">
-    </div>
+    <h1>Category Search</h1>
 
-    <div>
-            <img src="./images/Screen Shot 2018-05-16 at 14.40.58.png" height="150px">
-    </div>
-    
+    <section>
+            <p>Get all data (GET- Without parameters):</p>
+            <a target="_blank" href="https://tragil2018node.herokuapp.com/getAll">Get without parameters</a><br><br>
+            <p>Get Title by id (POST 'id' param required):</p>
+            <a target="_blank" href="https://tragil2018node.herokuapp.com/getCatbyID/:id/">Post with 1 parameters</a><br><br>
+            <p>Get Title,Visitor,expectancy,revenue (GET id and title params required):</p>
+            <a target="_blank" href="https://tragil2018node.herokuapp.com/search/:id/:title">Get with 2 parameters</a>
+    </section>
+
+
+    <section class="datamodel">
+    <h3>Data Model</h3>
+    <p>{</p>
+    <p>&emsp;"id": "1",</p>
+	<p>&emsp; "title": "Action",</p>
+	<p>&emsp; "visitors":"200",</p>
+    <p>&emsp; "expectancy":"1000",</p>
+    <p>&emsp; "revenue":"140000"</p>
+	<p>}</p>
+    </section>
 
 </body>
 </html>

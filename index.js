@@ -1,7 +1,9 @@
 var     express = require ('express'),
         app = express(),
+        bodyParser = require('body-parser'),
         port = process.env.PORT || 3000,
         func = require("./functions");
+        app.use(bodyParser.urlencoded({ extended:true }));
 
 app.all('*',
     (req,res,next)=>{
