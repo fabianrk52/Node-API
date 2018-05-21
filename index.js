@@ -24,10 +24,9 @@ var     express = require ('express'),
     });  
 
     app.all('*',
-    (req,res,next)=>{
+    (req,res)=>{
         console.log('Input');
         res.sendFile(`${__dirname}/index.html`)
-        next();
     });
 
 
@@ -36,7 +35,7 @@ var     express = require ('express'),
     res.sendFile(`${__dirname}/index.html`);
     });
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log(`listening port : ${port}`);
 });
 
