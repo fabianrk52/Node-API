@@ -26,6 +26,7 @@ var     express = require ('express'),
     app.all('*',
     (req,res)=>{
         console.log('Input');
+        res.sendFile(`${__dirname}/index.html`)
     });
 
 
