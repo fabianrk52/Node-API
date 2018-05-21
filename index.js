@@ -5,11 +5,6 @@ var     express = require ('express'),
         func = require("./functions");
         app.use(bodyParser.urlencoded({ extended:true }));
 
-app.all('*',
-    (req,res,next)=>{
-        console.log('Input');
-        next();
-    });
 
 
     app.get('/getAll/',
@@ -28,14 +23,16 @@ app.all('*',
         res.status(200).json(func.search(req.params.id,req.params.title));
     });  
 
+    app.all('*',
+    (req,res,next)=>{
+        console.log('Input');
+        next();
+    });
+
+
     app.get('/' ,
     (req,res) =>{
     res.sendFile(`${__dirname}/index.html`);
-    });
-
-    app.get('/includes/style.css',
-    (req,res) =>{
-    res.sendFile(`${__dirname}/includes/style.css`);
     });
 
 app.listen(3000,()=>{
